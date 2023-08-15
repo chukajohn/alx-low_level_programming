@@ -1,5 +1,8 @@
 #include "main.h"
-/* main - main function */
+/**
+*  main - main function 
+* Return: 0 always whenever sucessful
+*/
 
 int main(void)
 {
