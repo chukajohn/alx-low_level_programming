@@ -20,7 +20,7 @@ void times_table(void)
 
 		else
 		{
-			printf("2%d, ", outcome);
+			printf("%2d", outcome);
 			if (j != 9)
 				printf(", ");
 		}
