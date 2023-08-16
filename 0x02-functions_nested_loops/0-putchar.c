@@ -1,6 +1,7 @@
 #include "main.h"
+
 /**
-*  main - main function 
+*  main - main functio that prints _putchar
 * Return: 0 always whenever sucessful
 */
 
