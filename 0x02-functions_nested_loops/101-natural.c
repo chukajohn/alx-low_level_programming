@@ -2,6 +2,8 @@
 
 /**
 * main - the function
+*
+* Return: always 0 when sucessful
 */
 int main(void)
 {
@@ -9,7 +11,7 @@ int main(void)
 
 	int i;
 
-	for (i = 1; 1 <= 10; i++)
+	for (i = 1; i < 10; i++)
 	{
 		if (i % 3 == 0 || i % 5 == 0)
 			sum = sum + i;
