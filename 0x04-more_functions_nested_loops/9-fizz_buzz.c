@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
@@ -20,7 +19,8 @@ int main(void)
 			printf("%s", "Buzz");
 		else
 			printf("%d", i);
-				
+		if (1 != 100)
+			printf(" ");
 	}
 	printf("\n");
 	return (0);
