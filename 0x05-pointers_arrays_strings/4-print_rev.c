@@ -9,7 +9,7 @@
 void print_rev(char *s)
 {
 	int i;
-	int counting;
+	int counting = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
 		counting++;
@@ -17,5 +17,4 @@ void print_rev(char *s)
 	for (i = counting - 1; i >= 0; i--)
 		_putchar(s[i]);
 	_putchar('\n');
-	return (counting);
 }
