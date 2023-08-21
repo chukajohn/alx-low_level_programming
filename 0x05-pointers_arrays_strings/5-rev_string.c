@@ -20,7 +20,7 @@ void rev_string(char *s)
 
 		k = s[i];
 		s[i] = s[counting - 1 - i];
-		s[counting- 1 - i] = k;
+		s[counting - 1 - i] = k;
 	}
 
 }
