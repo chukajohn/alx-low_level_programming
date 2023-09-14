@@ -45,7 +45,6 @@ void print_all(const char * const format, ...)
 		}
 		if (format[i + 1] != '\0' && arg == 0)
 			printf(", ");
-		else
 		i++;
 	}
 	printf("\n");
