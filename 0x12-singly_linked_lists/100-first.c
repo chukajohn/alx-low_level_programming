@@ -1,13 +1,6 @@
 #include "lists.h"
-
 /**
- * myFunction - aplly the constructor
- */
-
-void myStartupFun(void) __attribute__ ((constructor));
-
-/**
- * myFunction - implementation of myfunction
+ * myStaetupFun - implementation of myfunction
  */
 
 void myStartupFun(void)
