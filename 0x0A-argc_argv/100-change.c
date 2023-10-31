@@ -25,13 +25,13 @@ int main(int argc, char **argv)
 	{
 		if (conts >= 25)
 			conts -= 25;
-		if (conts >= 10)
+		else if (conts >= 10)
 			conts -= 10;
-		if (conts >= 5)
-			conts = 5;
-		if (conts >= 2)
+		else if (conts >= 5)
+			conts -= 5;
+		else if (conts >= 2)
 			conts -= 2;
-		if (conts >= 1)
+		else if (conts >= 1)
 			conts -= 1;
 			mncoin += 1;
 	}
