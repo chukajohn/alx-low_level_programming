@@ -4,7 +4,7 @@
  *print_dog - function that prints dog
  *@d: a pointer to the vrible
  *
- *
+ *Return: pointer
  */
 
 void print_dog(struct dog *d)
