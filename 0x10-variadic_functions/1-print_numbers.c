@@ -22,9 +22,8 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		ar = va_arg(arg, const unsigned int);
 		printf("%d", ar);
 
-		if (separator != NULL && i != (n - 1))
-
-		printf("%s ", separator);
+		if (i != (n - 1) && separator != NULL)
+			printf("%s ", separator);
 	}
 	printf("\n");
 	va_end(arg);
