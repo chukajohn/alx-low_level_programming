@@ -2,16 +2,13 @@
 #define LISTS_H
 
 #include <stdio.h>
-#include <stdarg.h>
-#include <stddef.h>
-#include <stdlib.h>
 
 /**
  *struct list_s - singly linked list
  *@len: lenght of the string
  *@str: string
  **next: next node
- *Return: 0;
+ *Return: 0
  */
 
 typedef struct list_s
