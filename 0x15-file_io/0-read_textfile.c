@@ -7,35 +7,30 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
+	int file_descriptor;
+	ssize_t wordr, wordw;
+	char *duf;
+
 	if (filename == NULL)
 		return (0);
-
-	FILE *file = fopen(filename, "r");
-
-	if (file == NULL)
+	file_descriptor = open(filename, O_RDONLY);
+	if (file_descriptor == -1)
 		return (0);
-
-	char buffer[BUF_SIZE];
-	ssize_t total = 0;
-	ssize_t bytes_read;
-
-	while (letters > 0 && (bytes_read = fread(buffer, sizeof(char), BUF_SIZE, file)) > 0)
+	duf = malloc(sizeof(char) * letters);
+	if (duf == NULL)
 	{
-		if (bytes_read > letters)
-	{
-		bytes_read = letters;
-	}
-
-	ssize_t bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
-
-	if (bytes_written != bytes_read)
-	{
-		fclose(file);
+		close(file_descriptor);
 		return (0);
 	}
-	total += bytes_written;
-		letters -= bytes_written;
+	wordr = read(file_descriptor, duf, letters);
+	if (wordr == < 0)
+	{
+		free(duf);
+		return (0);
 	}
-	fclose(file);
-	return (total);
+	wordw = write(STDOUT_FILENO, duf, wordr);
+	free(duf);
+	if (wordr != wordw)
+		return (0);
+	return (wordw);
 }
