@@ -1,4 +1,5 @@
 #include "main.h"
+#include <fcntl.h>
 /**
  *read_textfile - reads textfile
  *@filename: name of the file
@@ -23,7 +24,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	wordr = read(file_descriptor, duf, letters);
-	if (wordr == < 0)
+	close(file_descriptor);
+	if (wordr == -1)
 	{
 		free(duf);
 		return (0);
