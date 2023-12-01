@@ -10,18 +10,24 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	FILE *filep;
-	size_t length;
+	int filed, wr;
+	int len = 0;
 
-	filep = fopen(filename, "w");
-	if (filep == NULL)
+	if (filename == NULL)
 		return (-1);
 	if (text_content != NULL)
 	{
-		length = strlen(text_content);
-		fwrite(text_content, 1, length, filep);
+		for (len = 0; text_content[len];)
+			len++;
 	}
 
-	fclose(filep);
-	return (0);
+	filed = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	wr = write(filed, text_content, len);
+
+	if (filed == -1 || wr == -1)
+	return (-1);
+
+	close(filed);
+
+	return (1);
 }
